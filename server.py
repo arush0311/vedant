@@ -23,7 +23,8 @@ def md():
     camera_details = db[request.form['camera']]
     camera_details['status'] = True if request.form['status'] == "True" else False
     db[request.form['camera']] = camera_details
-
+    print(camera_details, request.form['camera'], request.form['status'], camera_details['status'],  db[request.form['camera']])
+    
     return 'OK'
 
 
