@@ -30,7 +30,7 @@ def md():
 @app.route('/', methods=['GET', 'POST'])
 def index():
     db = flask_shelve.get_shelve('c')
-    return json.dumps(dict(db))
+    return json.dumps({'monkey': list(dict(db).values())})
 
 
 if __name__ == '__main__':
