@@ -21,7 +21,7 @@ def md():
     db = flask_shelve.get_shelve('c', )
 
     camera_details = db[request.form['camera']]
-    camera_details['status'] = bool(request.form['status'])
+    camera_details['status'] = True if request.form['status'] == "True" else False
     db[request.form['camera']] = camera_details
 
     return 'OK'
